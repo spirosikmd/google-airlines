@@ -1,0 +1,52 @@
+/*
+ * Colors from https://coolors.co/fefffe-e5fcf5-b3dec1-210124-750d37
+ * - #FEFFFE
+ * - #E5FCF5
+ * - #B3DEC1
+ * - #210124
+ * - #750D37
+ */
+
+.app {
+  padding: 0 25px 25px;
+}
+
+.app__title {
+  font-weight: 500;
+}
+
+.app__info {
+  color: hsl(0, 0%, 40%);
+  line-height: 25px;
+  max-width: 60ch;
+}
+
+.app__airlines {
+  padding-top: 25px;
+}
+
+.app__airline-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(75px, 75px));
+  grid-gap: 25px;
+}
+
+.app__airline {
+  padding: 20px;
+  border: 1px solid #e5fcf5;
+  border-radius: 50%;
+  transition: box-shadow 200ms ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__airline:hover,
+.app__airline:focus {
+  cursor: pointer;
+  box-shadow: 0 0 3px #750d37;
+}
+
+.app__anchor {
+  color: #750d37;
+}
