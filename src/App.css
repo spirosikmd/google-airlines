@@ -43,7 +43,6 @@
 
 .app__airline:hover,
 .app__airline:focus {
-  cursor: pointer;
   box-shadow: 0 0 3px #750d37;
 }
 
