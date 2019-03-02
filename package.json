@@ -10,6 +10,7 @@
     "@types/react-tooltip": "^3.9.1",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+    "react-graceful-image": "^1.2.9",
     "react-scripts": "2.1.5",
     "react-tooltip": "^3.9.2",
     "typescript": "3.3.3333"
