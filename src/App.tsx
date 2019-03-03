@@ -9,7 +9,7 @@ const App = ({ airlines }: { airlines: AirlineData[] }) => (
   <div className="app">
     <Info />
     <AirlineList airlines={airlines} />
-    <ReactTooltip place="top" effect="solid" />
+    <ReactTooltip place="top" effect="solid" className="app__tooltip" />
   </div>
 );
 

@@ -35,7 +35,7 @@
   padding: 20px;
   border: 1px solid #e5fcf5;
   border-radius: 50%;
-  transition: box-shadow 200ms ease-out;
+  transition: box-shadow 0.2s ease-out;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,4 +48,8 @@
 
 .app__anchor {
   color: #750d37;
+}
+
+.app__tooltip {
+  transition: opacity 0.2s ease-out;
 }
