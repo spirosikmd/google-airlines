@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the app with info and a list of airlines 1`] = `
+<DocumentFragment>
+  <div
+    class="app"
+  >
+    <h1
+      class="app__title"
+    >
+      Google Airlines
+    </h1>
+    <p
+      class="app__info"
+    >
+      Google created their own airline logos for 
+      <a
+        class="app__anchor"
+        href="https://www.google.com/flights"
+        target="_blank"
+      >
+        google flights
+      </a>
+       for many airlines out there. This is a collection of a few of them in a random order. I got the IATA codes from 
+      <a
+        class="app__anchor"
+        href="https://en.wikipedia.org/wiki/List_of_airline_codes"
+        target="_blank"
+      >
+        wikipedia
+      </a>
+      . Enjoy!
+    </p>
+    <div
+      class="app__airlines"
+    >
+      <div
+        class="app__airline-list"
+      >
+        <div
+          class="app__airline"
+          currentitem="false"
+          data-tip="airline1"
+          tabindex="0"
+        >
+          <img
+            alt="airline1"
+            height="35"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'35' height%3D'35' viewBox%3D'0 0 35 35'%2F%3E"
+            style="background: rgb(229, 252, 245);"
+            width="35"
+          />
+        </div>
+        <div
+          class="app__airline"
+          currentitem="false"
+          data-tip="airline2"
+          tabindex="0"
+        >
+          <img
+            alt="airline2"
+            height="35"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'35' height%3D'35' viewBox%3D'0 0 35 35'%2F%3E"
+            style="background: rgb(229, 252, 245);"
+            width="35"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="__react_component_tooltip place-top type-dark "
+      data-id="tooltip"
+    />
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders an airline with image 1`] = `
+<DocumentFragment>
+  <div
+    class="app__airline"
+    data-tip="airline"
+    tabindex="0"
+  >
+    <img
+      alt="airline"
+      height="35"
+      src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'35' height%3D'35' viewBox%3D'0 0 35 35'%2F%3E"
+      style="background: rgb(229, 252, 245);"
+      width="35"
+    />
+  </div>
+</DocumentFragment>
+`;
