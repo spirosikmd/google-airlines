@@ -929,10 +929,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-tooltip@^3.9.1":
-  version "3.9.1"
-  resolved "https://registry.yarnpkg.com/@types/react-tooltip/-/react-tooltip-3.9.1.tgz#5204503195dff3b1385dd6f1977d6342f9dc382b"
-  integrity sha512-nTI+OYsbVy6f3kyXHt2l4obvorB24m4biuxAsgd2y/f6pPSJ8W3g3upiT0d41cD5qHCBAOEmSmKdMNeyU50iUw==
+"@types/react-tooltip@^3.9.2":
+  version "3.9.2"
+  resolved "https://registry.yarnpkg.com/@types/react-tooltip/-/react-tooltip-3.9.2.tgz#c46ee03cc8631ec1b130feef02af119dbe3639d2"
+  integrity sha512-nw8yikdyULgQoZWSkMgjMVd7nnrjlnUJc4U8NtuxCmTIloEgQTJpI6O/KrWTBK8cNP67KZy/fGgjZ9rOQsdwBQ==
   dependencies:
     "@types/react" "*"
 
