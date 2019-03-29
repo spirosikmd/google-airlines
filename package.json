@@ -32,6 +32,6 @@
   ],
   "devDependencies": {
     "puppeteer": "^1.13.0",
-    "react-testing-library": "^6.0.2"
+    "react-testing-library": "^6.0.3"
   }
 }
