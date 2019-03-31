@@ -10,6 +10,7 @@ const Airline = ({ airline }: { airline: AirlineData }) => (
       width="35"
       alt={airline.airline}
       placeholderColor="#E5FCF5"
+      noRetry={true}
     />
   </div>
 );
