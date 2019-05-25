@@ -3,19 +3,19 @@
 exports[`renders the app with info and a list of airlines 1`] = `
 <DocumentFragment>
   <div
-    class="app"
+    class="font-sans p-6"
   >
     <h1
-      class="app__title"
+      class="text-4xl font-medium"
     >
       Google Airlines
     </h1>
     <p
-      class="app__info"
+      class="max-w-2xl text-gray-600"
     >
       Google created their own airline logos for 
       <a
-        class="app__anchor"
+        class="text-purple-600 underline cursor-pointer"
         href="https://www.google.com/flights"
         target="_blank"
       >
@@ -23,7 +23,7 @@ exports[`renders the app with info and a list of airlines 1`] = `
       </a>
        for many airlines out there. This is a collection of a few of them in a random order. I got the IATA codes from 
       <a
-        class="app__anchor"
+        class="text-purple-600 underline cursor-pointer"
         href="https://en.wikipedia.org/wiki/List_of_airline_codes"
         target="_blank"
       >
@@ -32,13 +32,13 @@ exports[`renders the app with info and a list of airlines 1`] = `
       . Enjoy!
     </p>
     <div
-      class="app__airlines"
+      class="pt-6"
     >
       <div
-        class="app__airline-list"
+        class="flex flex-wrap"
       >
         <div
-          class="app__airline"
+          class="p-6 m-2 border border-solid rounded-full border-gray-200  hover:border-purple-600"
           currentitem="false"
           data-tip="airline1"
           tabindex="0"
@@ -52,7 +52,7 @@ exports[`renders the app with info and a list of airlines 1`] = `
           />
         </div>
         <div
-          class="app__airline"
+          class="p-6 m-2 border border-solid rounded-full border-gray-200  hover:border-purple-600"
           currentitem="false"
           data-tip="airline2"
           tabindex="0"

@@ -3,16 +3,16 @@
 exports[`renders info 1`] = `
 <DocumentFragment>
   <h1
-    class="app__title"
+    class="text-4xl font-medium"
   >
     Google Airlines
   </h1>
   <p
-    class="app__info"
+    class="max-w-2xl text-gray-600"
   >
     Google created their own airline logos for 
     <a
-      class="app__anchor"
+      class="text-purple-600 underline cursor-pointer"
       href="https://www.google.com/flights"
       target="_blank"
     >
@@ -20,7 +20,7 @@ exports[`renders info 1`] = `
     </a>
      for many airlines out there. This is a collection of a few of them in a random order. I got the IATA codes from 
     <a
-      class="app__anchor"
+      class="text-purple-600 underline cursor-pointer"
       href="https://en.wikipedia.org/wiki/List_of_airline_codes"
       target="_blank"
     >

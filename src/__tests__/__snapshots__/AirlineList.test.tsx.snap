@@ -3,13 +3,13 @@
 exports[`renders a list of airlines 1`] = `
 <DocumentFragment>
   <div
-    class="app__airlines"
+    class="pt-6"
   >
     <div
-      class="app__airline-list"
+      class="flex flex-wrap"
     >
       <div
-        class="app__airline"
+        class="p-6 m-2 border border-solid rounded-full border-gray-200  hover:border-purple-600"
         data-tip="airline1"
         tabindex="0"
       >
@@ -22,7 +22,7 @@ exports[`renders a list of airlines 1`] = `
         />
       </div>
       <div
-        class="app__airline"
+        class="p-6 m-2 border border-solid rounded-full border-gray-200  hover:border-purple-600"
         data-tip="airline2"
         tabindex="0"
       >

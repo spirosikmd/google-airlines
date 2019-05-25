@@ -3,7 +3,7 @@
 exports[`renders an airline with image 1`] = `
 <DocumentFragment>
   <div
-    class="app__airline"
+    class="p-6 m-2 border border-solid rounded-full border-gray-200  hover:border-purple-600"
     data-tip="airline"
     tabindex="0"
   >
