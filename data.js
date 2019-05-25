@@ -28,7 +28,12 @@ const fs = require('fs');
     return airlines;
   });
 
-  fs.writeFile('airlines.json', JSON.stringify(airlines), 'utf8', async () => {
-    await browser.close();
-  });
+  fs.writeFile(
+    'src/airlines.json',
+    JSON.stringify(airlines),
+    'utf8',
+    async () => {
+      await browser.close();
+    }
+  );
 })();
