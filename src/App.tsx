@@ -2,14 +2,13 @@ import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import AirlineList from './AirlineList';
 import Info from './Info';
-import './App.css';
 import { AirlineData } from './airlines';
 
 const App = ({ airlines }: { airlines: AirlineData[] }) => (
-  <div className="app">
+  <div className="font-sans p-6">
     <Info />
-    <AirlineList airlines={airlines} />
-    <ReactTooltip place="top" effect="solid" className="app__tooltip" />
+    <AirlineList airlines={airlines.slice(0, 20)} />
+    <ReactTooltip place="top" effect="solid" />
   </div>
 );
 

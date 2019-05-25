@@ -1,26 +1,17 @@
 import React from 'react';
+import Anchor from './Anchor';
 
 const Info = () => (
   <>
-    <h1 className="app__title">Google Airlines</h1>
-    <p className="app__info">
+    <h1 className="text-4xl font-medium">Google Airlines</h1>
+    <p className="max-w-2xl text-gray-600">
       Google created their own airline logos for{' '}
-      <a
-        href="https://www.google.com/flights"
-        target="_blank"
-        className="app__anchor"
-      >
-        google flights
-      </a>{' '}
-      for many airlines out there. This is a collection of a few of them in a
-      random order. I got the IATA codes from{' '}
-      <a
-        href="https://en.wikipedia.org/wiki/List_of_airline_codes"
-        target="_blank"
-        className="app__anchor"
-      >
+      <Anchor href="https://www.google.com/flights">google flights</Anchor> for
+      many airlines out there. This is a collection of a few of them in a random
+      order. I got the IATA codes from{' '}
+      <Anchor href="https://en.wikipedia.org/wiki/List_of_airline_codes">
         wikipedia
-      </a>
+      </Anchor>
       . Enjoy!
     </p>
   </>

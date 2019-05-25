@@ -3,8 +3,8 @@ import Airline from './Airline';
 import { AirlineData } from './airlines';
 
 const AirlineList = ({ airlines }: { airlines: AirlineData[] }) => (
-  <div className="app__airlines">
-    <div className="app__airline-list">
+  <div className="pt-6">
+    <div className="flex flex-wrap">
       {airlines.map(airline => (
         <Airline key={airline.id} airline={airline} />
       ))}
