@@ -1,6 +1,8 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
+console.log('Generating airline data...');
+
 (async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
@@ -33,6 +35,7 @@ const fs = require('fs');
     JSON.stringify(airlines),
     'utf8',
     async () => {
+      console.log(`Generated ${airlines.length} airline data!`);
       await browser.close();
     }
   );
