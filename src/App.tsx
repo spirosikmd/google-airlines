@@ -7,7 +7,7 @@ import { AirlineData } from './airlines';
 const App = ({ airlines }: { airlines: AirlineData[] }) => (
   <div className="font-sans p-6">
     <Info />
-    <AirlineList airlines={airlines.slice(0, 20)} />
+    <AirlineList airlines={airlines} />
     <ReactTooltip place="top" effect="solid" />
   </div>
 );
