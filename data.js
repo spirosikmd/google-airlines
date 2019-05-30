@@ -8,27 +8,43 @@ console.log('Generating airline data...');
   const page = await browser.newPage();
   await page.goto('https://en.wikipedia.org/wiki/List_of_airline_codes');
 
-  const airlines = await page.evaluate(() => {
-    const trs = document.querySelectorAll('table tbody tr');
+  let error;
 
-    const airlines = [];
-    const idCache = [];
+  const airlines = await page
+    .evaluate(() => {
+      const trs = document.querySelectorAll('table tbody tr');
 
-    trs.forEach(tr => {
-      const tds = tr.querySelectorAll('td');
-      const iata = tds[0].textContent.trim();
-      if (!iata) return;
-      const airline = tds[2].textContent.trim();
-      const id = `${iata}_${airline.toLowerCase()}`;
-      if (idCache.indexOf(id) !== -1) {
-        return;
-      }
-      idCache.push(id);
-      airlines.push({ id, iata, airline });
+      const airlines = [];
+      const idCache = [];
+
+      trs.forEach(tr => {
+        const tds = tr.querySelectorAll('td');
+        const iata = tds[0].textContent.trim();
+        if (!iata) return;
+        const airline = tds[2].textContent.trim();
+        const id = `${iata}_${airline.toLowerCase()}`;
+        if (idCache.indexOf(id) !== -1) {
+          return;
+        }
+        idCache.push(id);
+        airlines.push({ id, iata, airline });
+      });
+
+      return airlines;
+    })
+    .catch(err => {
+      error = err;
     });
 
-    return airlines;
-  });
+  if (airlines.length === 0) {
+    if (error) {
+      console.error('Error generating airline data', error);
+    } else {
+      console.log('No airline data to generate.');
+    }
+    await browser.close();
+    return;
+  }
 
   fs.writeFile(
     'src/airlines.json',

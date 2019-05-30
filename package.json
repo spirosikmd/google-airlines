@@ -18,10 +18,10 @@
   "scripts": {
     "data": "node data.js",
     "build:tailwind": "tailwind build ./src/index.tailwind.css -o ./src/index.css",
-    "prestart": "yarn build:tailwind",
-    "start": "yarn data && react-scripts start",
-    "prebuild": "yarn build:tailwind",
-    "build": "yarn data && react-scripts build",
+    "prestart": "yarn build:tailwind && yarn data",
+    "start": "react-scripts start",
+    "prebuild": "yarn build:tailwind && yarn data",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
