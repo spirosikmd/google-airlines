@@ -17,7 +17,10 @@
   },
   "scripts": {
     "data": "node data.js",
+    "build:tailwind": "tailwind build ./src/index.tailwind.css -o ./src/index.css",
+    "prestart": "yarn build:tailwind",
     "start": "yarn data && react-scripts start",
+    "prebuild": "yarn build:tailwind",
     "build": "yarn data && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -33,6 +36,7 @@
   ],
   "devDependencies": {
     "puppeteer": "^1.17.0",
-    "react-testing-library": "^6.1.2"
+    "react-testing-library": "^6.1.2",
+    "tailwindcss": "^1.0.2"
   }
 }

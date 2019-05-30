@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { AIRLINES } from './airlines';
+import './index.css';
 
 ReactDOM.render(<App airlines={AIRLINES} />, document.getElementById('root'));
 
