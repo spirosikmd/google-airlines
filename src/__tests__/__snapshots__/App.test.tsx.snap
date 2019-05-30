@@ -45,10 +45,9 @@ exports[`renders the app with info and a list of airlines 1`] = `
         >
           <img
             alt="airline1"
-            height="35"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'35' height%3D'35' viewBox%3D'0 0 35 35'%2F%3E"
+            class="h-8 w-8"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'200' height%3D'150' viewBox%3D'0 0 200 150'%2F%3E"
             style="background: rgb(229, 252, 245);"
-            width="35"
           />
         </div>
         <div
@@ -59,10 +58,9 @@ exports[`renders the app with info and a list of airlines 1`] = `
         >
           <img
             alt="airline2"
-            height="35"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'35' height%3D'35' viewBox%3D'0 0 35 35'%2F%3E"
+            class="h-8 w-8"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'200' height%3D'150' viewBox%3D'0 0 200 150'%2F%3E"
             style="background: rgb(229, 252, 245);"
-            width="35"
           />
         </div>
       </div>
