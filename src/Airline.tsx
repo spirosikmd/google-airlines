@@ -10,11 +10,10 @@ const Airline = ({ airline }: { airline: AirlineData }) => (
   >
     <Image
       src={`//www.gstatic.com/flights/airline_logos/70px/${airline.iata}.png`}
-      height="35"
-      width="35"
       alt={airline.airline}
       placeholderColor="#E5FCF5"
       noRetry={true}
+      className="h-8 w-8"
     />
   </div>
 );
