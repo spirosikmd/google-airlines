@@ -4,7 +4,7 @@ import { AirlineData } from './airlines';
 
 const Airline = ({ airline }: { airline: AirlineData }) => (
   <div
-    className="p-6 m-2 border border-solid rounded-full border-gray-200  hover:border-purple-600"
+    className="p-6 m-2 h-20 w-20 border border-solid rounded-full border-gray-200 hover:border-purple-600 flex items-center justify-center"
     data-tip={airline.airline}
     tabIndex={0}
   >
@@ -13,7 +13,6 @@ const Airline = ({ airline }: { airline: AirlineData }) => (
       alt={airline.airline}
       placeholderColor="#E5FCF5"
       noRetry={true}
-      className="h-8 w-8"
     />
   </div>
 );
