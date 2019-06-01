@@ -16,12 +16,15 @@
     "typescript": "3.3.3333"
   },
   "scripts": {
+    "start": "npm-run-all -p start:css start:js",
+    "build": "npm-run-all build:css build:js",
+    "prestart": "yarn data",
+    "prebuild": "yarn data",
+    "start:js": "react-scripts start",
+    "build:js": "react-scripts build",
+    "start:css": "postcss src/index.tailwind.css -o src/index.css -w",
+    "build:css": "postcss src/index.tailwind.css -o src/index.css --env production",
     "data": "node data.js",
-    "build:tailwind": "tailwind build ./src/index.tailwind.css -o ./src/index.css",
-    "prestart": "yarn build:tailwind && yarn data",
-    "start": "react-scripts start",
-    "prebuild": "yarn build:tailwind && yarn data",
-    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -35,7 +38,11 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^1.2.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.2",
     "puppeteer": "^1.17.0",
+    "purgecss": "^1.3.0",
     "react-testing-library": "^6.1.2",
     "tailwindcss": "^1.0.2"
   }
