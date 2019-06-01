@@ -13,6 +13,7 @@ const Airline = ({ airline }: { airline: AirlineData }) => (
       alt={airline.airline}
       placeholderColor="#E5FCF5"
       noRetry={true}
+      className="max-w-full"
     />
   </div>
 );
