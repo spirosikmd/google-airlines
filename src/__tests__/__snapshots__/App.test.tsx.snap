@@ -1,74 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the app with info and a list of airlines 1`] = `
-<DocumentFragment>
-  <div
-    class="font-sans p-6"
+<div
+  class="font-sans p-6"
+  data-testid="resolved"
+>
+  <h1
+    class="text-4xl font-medium"
   >
-    <h1
-      class="text-4xl font-medium"
+    Google Airlines
+  </h1>
+  <p
+    class="max-w-2xl text-gray-600"
+  >
+    Google created their own airline logos for
+     
+    <a
+      class="text-purple-600 underline cursor-pointer"
+      href="https://www.google.com/flights"
+      target="_blank"
     >
-      Google Airlines
-    </h1>
-    <p
-      class="max-w-2xl text-gray-600"
+      google flights
+    </a>
+     for many airlines out there. This is a collection of a few of them in a random order. I got the IATA codes from
+     
+    <a
+      class="text-purple-600 underline cursor-pointer"
+      href="https://en.wikipedia.org/wiki/List_of_airline_codes"
+      target="_blank"
     >
-      Google created their own airline logos for 
-      <a
-        class="text-purple-600 underline cursor-pointer"
-        href="https://www.google.com/flights"
-        target="_blank"
-      >
-        google flights
-      </a>
-       for many airlines out there. This is a collection of a few of them in a random order. I got the IATA codes from 
-      <a
-        class="text-purple-600 underline cursor-pointer"
-        href="https://en.wikipedia.org/wiki/List_of_airline_codes"
-        target="_blank"
-      >
-        wikipedia
-      </a>
-      . Enjoy!
-    </p>
+      wikipedia
+    </a>
+    . Enjoy!
+  </p>
+  <div
+    class="pt-6"
+  >
     <div
-      class="pt-6"
+      class="flex flex-wrap"
     >
       <div
-        class="flex flex-wrap"
+        class="p-6 m-2 h-20 w-20 border border-solid rounded-full border-gray-200 hover:border-purple-600 flex items-center justify-center"
+        currentitem="false"
+        data-tip="airline1"
+        tabindex="0"
       >
-        <div
-          class="p-6 m-2 border border-solid rounded-full border-gray-200  hover:border-purple-600"
-          currentitem="false"
-          data-tip="airline1"
-          tabindex="0"
-        >
-          <img
-            alt="airline1"
-            class="h-8 w-8"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'200' height%3D'150' viewBox%3D'0 0 200 150'%2F%3E"
-            style="background: rgb(229, 252, 245);"
-          />
-        </div>
-        <div
-          class="p-6 m-2 border border-solid rounded-full border-gray-200  hover:border-purple-600"
-          currentitem="false"
-          data-tip="airline2"
-          tabindex="0"
-        >
-          <img
-            alt="airline2"
-            class="h-8 w-8"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'200' height%3D'150' viewBox%3D'0 0 200 150'%2F%3E"
-            style="background: rgb(229, 252, 245);"
-          />
-        </div>
+        <img
+          alt="airline1"
+          class="max-w-full"
+          src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'200' height%3D'150' viewBox%3D'0 0 200 150'%2F%3E"
+          style="background: rgb(229, 252, 245);"
+        />
+      </div>
+      <div
+        class="p-6 m-2 h-20 w-20 border border-solid rounded-full border-gray-200 hover:border-purple-600 flex items-center justify-center"
+        currentitem="false"
+        data-tip="airline2"
+        tabindex="0"
+      >
+        <img
+          alt="airline2"
+          class="max-w-full"
+          src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'200' height%3D'150' viewBox%3D'0 0 200 150'%2F%3E"
+          style="background: rgb(229, 252, 245);"
+        />
       </div>
     </div>
-    <div
-      class="__react_component_tooltip place-top type-dark "
-      data-id="tooltip"
-    />
   </div>
-</DocumentFragment>
+  <div
+    class="__react_component_tooltip place-top type-dark "
+    data-id="tooltip"
+  />
+</div>
 `;

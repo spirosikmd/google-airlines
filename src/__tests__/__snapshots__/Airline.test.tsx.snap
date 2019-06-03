@@ -3,13 +3,13 @@
 exports[`renders an airline with image 1`] = `
 <DocumentFragment>
   <div
-    class="p-6 m-2 border border-solid rounded-full border-gray-200  hover:border-purple-600"
+    class="p-6 m-2 h-20 w-20 border border-solid rounded-full border-gray-200 hover:border-purple-600 flex items-center justify-center"
     data-tip="airline"
     tabindex="0"
   >
     <img
       alt="airline"
-      class="h-8 w-8"
+      class="max-w-full"
       src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'200' height%3D'150' viewBox%3D'0 0 200 150'%2F%3E"
       style="background: rgb(229, 252, 245);"
     />
