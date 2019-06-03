@@ -17,7 +17,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="font-sans p-6">
+    <div className="font-sans p-6" data-testid="resolved">
       <Info />
       <AirlineList airlines={airlines} />
       <ReactTooltip place="top" effect="solid" />
