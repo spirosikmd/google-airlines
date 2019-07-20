@@ -13,6 +13,6 @@ action "Test" {
   needs = ["Install"]
   args = "test --coverage"
   env = {
-    CI = true
+    CI = "true"
   }
 }
