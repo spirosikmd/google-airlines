@@ -1,0 +1,18 @@
+on: push
+name: Deploy
+jobs:
+  install:
+    name: Install
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Install
+      uses: borales/actions-yarn@master
+      with:
+        args: install
+    - name: Test
+      uses: borales/actions-yarn@master
+      env:
+        CI: "true"
+      with:
+        args: test --coverage
