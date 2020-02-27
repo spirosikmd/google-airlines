@@ -25,3 +25,6 @@ yarn-error.log*
 public/airlines.json
 
 src/index.css
+
+# Local Netlify folder
+.netlify

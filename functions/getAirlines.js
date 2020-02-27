@@ -1,4 +1,4 @@
-const airlineData = require('./airlines.json');
+const airlineData = require('../public/airlines.json');
 
 exports.handler = async function(event, context, callback) {
   callback(null, {
