@@ -1,6 +1,8 @@
-exports.handler = function(event, context, callback) {
+const airlineData = require('./airlines.json');
+
+exports.handler = async function(event, context, callback) {
   callback(null, {
     statusCode: 200,
-    body: 'Hello, World'
+    body: JSON.stringify(airlineData)
   });
 };
