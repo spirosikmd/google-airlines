@@ -8,7 +8,7 @@ const App = () => {
   const [airlines, setAirlines] = React.useState<AirlineData[]>([]);
 
   React.useEffect(() => {
-    fetch('./airlines.json')
+    fetch('.netlify/functions/getAirlines')
       .then(response => response.json())
       .then(airlineData => {
         setAirlines(airlineData);
