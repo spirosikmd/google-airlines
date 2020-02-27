@@ -47,6 +47,16 @@ console.log('Generating airline data...');
         await browser.close();
       }
     );
+
+    fs.writeFile(
+      'functions/airlines.json',
+      JSON.stringify(airlines),
+      'utf8',
+      async () => {
+        console.log(`Generated ${airlines.length} airline data (functions)!`);
+        await browser.close();
+      }
+    );
   } catch (error) {
     console.error('Error generating airline data', error);
     await browser.close();
