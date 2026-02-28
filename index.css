@@ -229,8 +229,8 @@ input[type='text']:focus {
 }
 
 .logo-wrap img {
-  width: 70px;
-  height: 42px;
+  width: 62px;
+  height: 38px;
   object-fit: contain;
   transition: opacity 0.2s;
 }
@@ -296,6 +296,10 @@ footer {
   line-height: 1.7;
   max-width: 1400px;
   margin: 0 auto;
+}
+
+.footer-attribution {
+  margin-top: 1rem;
 }
 
 footer a {
