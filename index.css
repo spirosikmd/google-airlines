@@ -101,6 +101,23 @@ header {
   pointer-events: none;
 }
 
+.search-clear {
+  position: absolute;
+  right: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.7rem;
+  padding: 0.2rem;
+  display: none;
+}
+.search-clear:hover {
+  color: var(--text);
+}
+
 input[type='text'] {
   font-family: 'DM Mono', monospace;
   font-size: 0.8rem;

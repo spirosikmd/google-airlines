@@ -92,8 +92,22 @@ document.getElementById('toggle-theme').addEventListener('click', function () {
 });
 
 // Search
-document.getElementById('search').addEventListener('input', function () {
+const searchEl = document.getElementById('search');
+const searchClear = document.getElementById('search-clear');
+
+searchEl.addEventListener('input', function () {
   currentSearch = this.value;
+  searchClear.style.display = this.value ? 'block' : 'none';
+  currentRegion = 'All';
+  buildRegionBar();
+  renderGrid();
+});
+
+searchClear.addEventListener('click', function () {
+  searchEl.value = '';
+  currentSearch = '';
+  this.style.display = 'none';
+  searchEl.focus();
   currentRegion = 'All';
   buildRegionBar();
   renderGrid();
