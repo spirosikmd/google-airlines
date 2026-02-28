@@ -23,6 +23,7 @@
       <div class="controls">
         <div class="search-wrap">
           <svg
+            aria-hidden="true"
             width="14"
             height="14"
             viewBox="0 0 24 24"
@@ -36,6 +37,7 @@
           <input
             type="text"
             id="search"
+            aria-label="Search airlines"
             placeholder="Search airline or code…"
           />
           <button class="search-clear" id="search-clear" aria-label="Clear search">✕</button>
@@ -50,13 +52,13 @@
       </div>
     </header>
 
-    <div class="region-bar" id="region-bar"></div>
+    <div class="region-bar" id="region-bar" role="group" aria-label="Filter by region"></div>
 
     <div class="divider"><hr /></div>
 
-    <div class="stats" id="stats"></div>
+    <div class="stats" id="stats" aria-live="polite"></div>
 
-    <div class="grid" id="grid"></div>
+    <div class="grid" id="grid" role="list"></div>
 
     <footer>
       <p>

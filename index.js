@@ -25,7 +25,7 @@ function buildRegionBar() {
   const bar = document.getElementById('region-bar');
   bar.innerHTML = REGIONS.map(
     (r) =>
-      `<button class="btn ${r === currentRegion ? 'active' : ''}" data-region="${r}">${r}</button>`,
+      `<button class="btn ${r === currentRegion ? 'active' : ''}" data-region="${r}" aria-pressed="${r === currentRegion}">${r}</button>`,
   ).join('');
   bar.querySelectorAll('[data-region]').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -56,18 +56,18 @@ function renderGrid() {
     `Showing ${filtered.length} of ${AIRLINES.length} carriers`;
 
   if (!filtered.length) {
-    grid.innerHTML = `<div class="no-results"><span>✈️</span>No airlines found for "${currentSearch}"</div>`;
+    grid.innerHTML = `<div class="no-results"><span aria-hidden="true">✈️</span>No airlines found for "${currentSearch}"</div>`;
     return;
   }
 
   grid.innerHTML = filtered
     .map(
       (a, i) => `
-    <div class="card" style="animation-delay:${Math.min(i * 20, 400)}ms">
-      <div class="logo-wrap">
+    <div class="card" role="listitem" aria-label="${a.name}, IATA code ${a.code}${a.country ? ', ' + a.country : ''}" style="animation-delay:${Math.min(i * 20, 400)}ms">
+      <div class="logo-wrap" aria-hidden="true">
         <img
           src="${logoUrl(a.code, currentVariant)}"
-          alt="${a.name} logo"
+          alt=""
           loading="lazy"
           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
         >
