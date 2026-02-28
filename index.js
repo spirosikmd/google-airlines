@@ -1,0 +1,1252 @@
+const AIRLINES = [
+  { code: '0B', name: 'Blue Air', country: 'Romania', region: 'Europe' },
+  {
+    code: '2B',
+    name: 'Aerocondor',
+    country: 'Portugal',
+    region: 'Europe',
+  },
+  {
+    code: '3K',
+    name: 'Jetstar Asia',
+    country: 'Singapore',
+    region: 'Asia',
+  },
+  {
+    code: '3U',
+    name: 'Sichuan Airlines',
+    country: 'China',
+    region: 'Asia',
+  },
+  {
+    code: '3X',
+    name: 'Japan Air Commuter',
+    country: 'Japan',
+    region: 'Asia',
+  },
+  {
+    code: '4C',
+    name: 'Aires',
+    country: 'Colombia',
+    region: 'Latin America',
+  },
+  {
+    code: '4M',
+    name: 'LAN Argentina',
+    country: 'Argentina',
+    region: 'Latin America',
+  },
+  {
+    code: '4O',
+    name: 'Interjet',
+    country: 'Mexico',
+    region: 'Latin America',
+  },
+  {
+    code: '4U',
+    name: 'Germanwings',
+    country: 'Germany',
+    region: 'Europe',
+  },
+  {
+    code: '4Z',
+    name: 'Airlink',
+    country: 'South Africa',
+    region: 'Africa',
+  },
+  {
+    code: '5J',
+    name: 'Cebu Pacific',
+    country: 'Philippines',
+    region: 'Asia',
+  },
+  { code: '5X', name: 'UPS Airlines', country: 'USA', region: 'Other' },
+  { code: '6E', name: 'IndiGo', country: 'India', region: 'Asia' },
+  {
+    code: '7C',
+    name: 'Jeju Air',
+    country: 'South Korea',
+    region: 'Asia',
+  },
+  { code: '7G', name: 'StarFlyer', country: 'Japan', region: 'Asia' },
+  { code: '9W', name: 'Jet Airways', country: 'India', region: 'Asia' },
+  {
+    code: 'A3',
+    name: 'Aegean Airlines',
+    country: 'Greece',
+    region: 'Europe',
+  },
+  {
+    code: 'AA',
+    name: 'American Airlines',
+    country: 'USA',
+    region: 'North America',
+  },
+  {
+    code: 'AB',
+    name: 'Air Berlin',
+    country: 'Germany',
+    region: 'Europe',
+  },
+  {
+    code: 'AC',
+    name: 'Air Canada',
+    country: 'Canada',
+    region: 'North America',
+  },
+  {
+    code: 'AD',
+    name: 'Azul Brazilian Airlines',
+    country: 'Brazil',
+    region: 'Latin America',
+  },
+  { code: 'AF', name: 'Air France', country: 'France', region: 'Europe' },
+  {
+    code: 'AH',
+    name: 'Air Algerie',
+    country: 'Algeria',
+    region: 'Africa',
+  },
+  { code: 'AI', name: 'Air India', country: 'India', region: 'Asia' },
+  { code: 'AK', name: 'AirAsia', country: 'Malaysia', region: 'Asia' },
+  {
+    code: 'AM',
+    name: 'Aeromexico',
+    country: 'Mexico',
+    region: 'Latin America',
+  },
+  {
+    code: 'AR',
+    name: 'Aerolineas Argentinas',
+    country: 'Argentina',
+    region: 'Latin America',
+  },
+  {
+    code: 'AS',
+    name: 'Alaska Airlines',
+    country: 'USA',
+    region: 'North America',
+  },
+  {
+    code: 'AT',
+    name: 'Royal Air Maroc',
+    country: 'Morocco',
+    region: 'Africa',
+  },
+  {
+    code: 'AV',
+    name: 'Avianca',
+    country: 'Colombia',
+    region: 'Latin America',
+  },
+  { code: 'AY', name: 'Finnair', country: 'Finland', region: 'Europe' },
+  { code: 'AZ', name: 'ITA Airways', country: 'Italy', region: 'Europe' },
+  { code: 'B2', name: 'Belavia', country: 'Belarus', region: 'Europe' },
+  {
+    code: 'B6',
+    name: 'JetBlue Airways',
+    country: 'USA',
+    region: 'North America',
+  },
+  { code: 'B7', name: 'Uni Air', country: 'Taiwan', region: 'Asia' },
+  {
+    code: 'BA',
+    name: 'British Airways',
+    country: 'United Kingdom',
+    region: 'Europe',
+  },
+  {
+    code: 'BC',
+    name: 'Skymark Airlines',
+    country: 'Japan',
+    region: 'Asia',
+  },
+  {
+    code: 'BE',
+    name: 'Flybe',
+    country: 'United Kingdom',
+    region: 'Europe',
+  },
+  {
+    code: 'BG',
+    name: 'Biman Bangladesh Airlines',
+    country: 'Bangladesh',
+    region: 'Asia',
+  },
+  {
+    code: 'BI',
+    name: 'Royal Brunei Airlines',
+    country: 'Brunei',
+    region: 'Asia',
+  },
+  {
+    code: 'BL',
+    name: 'Jetstar Pacific',
+    country: 'Vietnam',
+    region: 'Asia',
+  },
+  {
+    code: 'BP',
+    name: 'Air Botswana',
+    country: 'Botswana',
+    region: 'Africa',
+  },
+  { code: 'BR', name: 'EVA Air', country: 'Taiwan', region: 'Asia' },
+  { code: 'BT', name: 'Air Baltic', country: 'Latvia', region: 'Europe' },
+  {
+    code: 'BV',
+    name: 'Blue Panorama Airlines',
+    country: 'Italy',
+    region: 'Europe',
+  },
+  { code: 'BY', name: 'TUI Airways', country: 'UK', region: 'Europe' },
+  { code: 'CA', name: 'Air China', country: 'China', region: 'Asia' },
+  {
+    code: 'CI',
+    name: 'China Airlines',
+    country: 'Taiwan',
+    region: 'Asia',
+  },
+  {
+    code: 'CK',
+    name: 'China Cargo Airlines',
+    country: 'China',
+    region: 'Asia',
+  },
+  {
+    code: 'CM',
+    name: 'Copa Airlines',
+    country: 'Panama',
+    region: 'Latin America',
+  },
+  {
+    code: 'CU',
+    name: 'Cubana de Aviacion',
+    country: 'Cuba',
+    region: 'Latin America',
+  },
+  {
+    code: 'CX',
+    name: 'Cathay Pacific',
+    country: 'Hong Kong',
+    region: 'Asia',
+  },
+  {
+    code: 'CZ',
+    name: 'China Southern Airlines',
+    country: 'China',
+    region: 'Asia',
+  },
+  { code: 'D7', name: 'AirAsia X', country: 'Malaysia', region: 'Asia' },
+  { code: 'DD', name: 'Nok Air', country: 'Thailand', region: 'Asia' },
+  {
+    code: 'DL',
+    name: 'Delta Air Lines',
+    country: 'USA',
+    region: 'North America',
+  },
+  {
+    code: 'DT',
+    name: 'TAAG Angola Airlines',
+    country: 'Angola',
+    region: 'Africa',
+  },
+  {
+    code: 'DX',
+    name: 'DAT Danish Air Transport',
+    country: 'Denmark',
+    region: 'Europe',
+  },
+  {
+    code: 'DY',
+    name: 'Norwegian Air Shuttle',
+    country: 'Norway',
+    region: 'Europe',
+  },
+  {
+    code: 'EI',
+    name: 'Aer Lingus',
+    country: 'Ireland',
+    region: 'Europe',
+  },
+  { code: 'EK', name: 'Emirates', country: 'UAE', region: 'Middle East' },
+  {
+    code: 'ET',
+    name: 'Ethiopian Airlines',
+    country: 'Ethiopia',
+    region: 'Africa',
+  },
+  { code: 'EW', name: 'Eurowings', country: 'Germany', region: 'Europe' },
+  {
+    code: 'EY',
+    name: 'Etihad Airways',
+    country: 'UAE',
+    region: 'Middle East',
+  },
+  {
+    code: 'F9',
+    name: 'Frontier Airlines',
+    country: 'USA',
+    region: 'North America',
+  },
+  {
+    code: 'FB',
+    name: 'Bulgaria Air',
+    country: 'Bulgaria',
+    region: 'Europe',
+  },
+  {
+    code: 'FD',
+    name: 'Thai AirAsia',
+    country: 'Thailand',
+    region: 'Asia',
+  },
+  {
+    code: 'FI',
+    name: 'Icelandair',
+    country: 'Iceland',
+    region: 'Europe',
+  },
+  {
+    code: 'FJ',
+    name: 'Fiji Airways',
+    country: 'Fiji',
+    region: 'Oceania',
+  },
+  {
+    code: 'FL',
+    name: 'AirTran Airways',
+    country: 'USA',
+    region: 'North America',
+  },
+  {
+    code: 'FM',
+    name: 'Shanghai Airlines',
+    country: 'China',
+    region: 'Asia',
+  },
+  { code: 'FR', name: 'Ryanair', country: 'Ireland', region: 'Europe' },
+  { code: 'FX', name: 'FedEx Express', country: 'USA', region: 'Other' },
+  { code: 'FY', name: 'Firefly', country: 'Malaysia', region: 'Asia' },
+  { code: 'FZ', name: 'flydubai', country: 'UAE', region: 'Middle East' },
+  { code: 'G3', name: 'GOL', country: 'Brazil', region: 'Latin America' },
+  {
+    code: 'G4',
+    name: 'Allegiant Air',
+    country: 'USA',
+    region: 'North America',
+  },
+  { code: 'G8', name: 'GoAir', country: 'India', region: 'Asia' },
+  {
+    code: 'G9',
+    name: 'Air Arabia',
+    country: 'UAE',
+    region: 'Middle East',
+  },
+  {
+    code: 'GA',
+    name: 'Garuda Indonesia',
+    country: 'Indonesia',
+    region: 'Asia',
+  },
+  {
+    code: 'GE',
+    name: 'TransAsia Airways',
+    country: 'Taiwan',
+    region: 'Asia',
+  },
+  {
+    code: 'GF',
+    name: 'Gulf Air',
+    country: 'Bahrain',
+    region: 'Middle East',
+  },
+  { code: 'GK', name: 'Jetstar Japan', country: 'Japan', region: 'Asia' },
+  {
+    code: 'GL',
+    name: 'Air Greenland',
+    country: 'Denmark',
+    region: 'Europe',
+  },
+  {
+    code: 'H2',
+    name: 'SKY Airline',
+    country: 'Chile',
+    region: 'Latin America',
+  },
+  {
+    code: 'HA',
+    name: 'Hawaiian Airlines',
+    country: 'USA',
+    region: 'North America',
+  },
+  { code: 'HD', name: 'Air Do', country: 'Japan', region: 'Asia' },
+  {
+    code: 'HM',
+    name: 'Air Seychelles',
+    country: 'Seychelles',
+    region: 'Africa',
+  },
+  {
+    code: 'HO',
+    name: 'Juneyao Airlines',
+    country: 'China',
+    region: 'Asia',
+  },
+  {
+    code: 'HU',
+    name: 'Hainan Airlines',
+    country: 'China',
+    region: 'Asia',
+  },
+  {
+    code: 'HV',
+    name: 'Transavia',
+    country: 'Netherlands',
+    region: 'Europe',
+  },
+  {
+    code: 'HX',
+    name: 'Hong Kong Airlines',
+    country: 'Hong Kong',
+    region: 'Asia',
+  },
+  {
+    code: 'HY',
+    name: 'Uzbekistan Airways',
+    country: 'Uzbekistan',
+    region: 'Asia',
+  },
+  {
+    code: 'IA',
+    name: 'Iraqi Airways',
+    country: 'Iraq',
+    region: 'Middle East',
+  },
+  { code: 'IB', name: 'Iberia', country: 'Spain', region: 'Europe' },
+  {
+    code: 'IR',
+    name: 'Iran Air',
+    country: 'Iran',
+    region: 'Middle East',
+  },
+  {
+    code: 'IX',
+    name: 'Air India Express',
+    country: 'India',
+    region: 'Asia',
+  },
+  {
+    code: 'IY',
+    name: 'Yemenia',
+    country: 'Yemen',
+    region: 'Middle East',
+  },
+  { code: 'IZ', name: 'Arkia', country: 'Israel', region: 'Middle East' },
+  {
+    code: 'J2',
+    name: 'Azerbaijan Airlines',
+    country: 'Azerbaijan',
+    region: 'Asia',
+  },
+  {
+    code: 'J9',
+    name: 'Jazeera Airways',
+    country: 'Kuwait',
+    region: 'Middle East',
+  },
+  {
+    code: 'JJ',
+    name: 'LATAM Brasil',
+    country: 'Brazil',
+    region: 'Latin America',
+  },
+  { code: 'JK', name: 'Spanair', country: 'Spain', region: 'Europe' },
+  {
+    code: 'JL',
+    name: 'Japan Airlines',
+    country: 'Japan',
+    region: 'Asia',
+  },
+  {
+    code: 'JQ',
+    name: 'Jetstar Airways',
+    country: 'Australia',
+    region: 'Oceania',
+  },
+  {
+    code: 'JS',
+    name: 'Air Koryo',
+    country: 'North Korea',
+    region: 'Asia',
+  },
+  { code: 'JT', name: 'Lion Air', country: 'Indonesia', region: 'Asia' },
+  { code: 'JU', name: 'Air Serbia', country: 'Serbia', region: 'Europe' },
+  { code: 'KA', name: 'Dragonair', country: 'Hong Kong', region: 'Asia' },
+  { code: 'KB', name: 'Druk Air', country: 'Bhutan', region: 'Asia' },
+  {
+    code: 'KC',
+    name: 'Air Astana',
+    country: 'Kazakhstan',
+    region: 'Asia',
+  },
+  {
+    code: 'KE',
+    name: 'Korean Air',
+    country: 'South Korea',
+    region: 'Asia',
+  },
+  {
+    code: 'KL',
+    name: 'KLM Royal Dutch Airlines',
+    country: 'Netherlands',
+    region: 'Europe',
+  },
+  { code: 'KM', name: 'Air Malta', country: 'Malta', region: 'Europe' },
+  {
+    code: 'KQ',
+    name: 'Kenya Airways',
+    country: 'Kenya',
+    region: 'Africa',
+  },
+  {
+    code: 'KU',
+    name: 'Kuwait Airways',
+    country: 'Kuwait',
+    region: 'Middle East',
+  },
+  {
+    code: 'KX',
+    name: 'Cayman Airways',
+    country: 'Cayman Islands',
+    region: 'North America',
+  },
+  {
+    code: 'LA',
+    name: 'LATAM Airlines',
+    country: 'Chile',
+    region: 'Latin America',
+  },
+  {
+    code: 'LD',
+    name: 'Air Hong Kong',
+    country: 'Hong Kong',
+    region: 'Asia',
+  },
+  { code: 'LG', name: 'Luxair', country: 'Luxembourg', region: 'Europe' },
+  { code: 'LH', name: 'Lufthansa', country: 'Germany', region: 'Europe' },
+  { code: 'LJ', name: 'Jin Air', country: 'South Korea', region: 'Asia' },
+  {
+    code: 'LM',
+    name: 'LAM Mozambique Airlines',
+    country: 'Mozambique',
+    region: 'Africa',
+  },
+  {
+    code: 'LN',
+    name: 'Libyan Airlines',
+    country: 'Libya',
+    region: 'Africa',
+  },
+  {
+    code: 'LO',
+    name: 'LOT Polish Airlines',
+    country: 'Poland',
+    region: 'Europe',
+  },
+  {
+    code: 'LP',
+    name: 'LAN Peru',
+    country: 'Peru',
+    region: 'Latin America',
+  },
+  {
+    code: 'LR',
+    name: 'LACSA',
+    country: 'Costa Rica',
+    region: 'Latin America',
+  },
+  {
+    code: 'LS',
+    name: 'Jet2',
+    country: 'United Kingdom',
+    region: 'Europe',
+  },
+  {
+    code: 'LU',
+    name: 'LAN Express',
+    country: 'Chile',
+    region: 'Latin America',
+  },
+  { code: 'LX', name: 'Swiss', country: 'Switzerland', region: 'Europe' },
+  {
+    code: 'LY',
+    name: 'El Al Israel Airlines',
+    country: 'Israel',
+    region: 'Middle East',
+  },
+  {
+    code: 'MA',
+    name: 'Malev Hungarian Airlines',
+    country: 'Hungary',
+    region: 'Europe',
+  },
+  {
+    code: 'MD',
+    name: 'Air Madagascar',
+    country: 'Madagascar',
+    region: 'Africa',
+  },
+  {
+    code: 'ME',
+    name: 'Middle East Airlines',
+    country: 'Lebanon',
+    region: 'Middle East',
+  },
+  {
+    code: 'MF',
+    name: 'Xiamen Airlines',
+    country: 'China',
+    region: 'Asia',
+  },
+  {
+    code: 'MH',
+    name: 'Malaysia Airlines',
+    country: 'Malaysia',
+    region: 'Asia',
+  },
+  { code: 'MI', name: 'SilkAir', country: 'Singapore', region: 'Asia' },
+  {
+    code: 'MK',
+    name: 'Air Mauritius',
+    country: 'Mauritius',
+    region: 'Africa',
+  },
+  {
+    code: 'MM',
+    name: 'Peach Aviation',
+    country: 'Japan',
+    region: 'Asia',
+  },
+  {
+    code: 'MQ',
+    name: 'American Eagle',
+    country: 'USA',
+    region: 'North America',
+  },
+  {
+    code: 'MS',
+    name: 'Egyptair',
+    country: 'Egypt',
+    region: 'Middle East',
+  },
+  {
+    code: 'MU',
+    name: 'China Eastern Airlines',
+    country: 'China',
+    region: 'Asia',
+  },
+  {
+    code: 'MX',
+    name: 'Mexicana',
+    country: 'Mexico',
+    region: 'Latin America',
+  },
+  {
+    code: 'NF',
+    name: 'Air Vanuatu',
+    country: 'Vanuatu',
+    region: 'Oceania',
+  },
+  {
+    code: 'NH',
+    name: 'All Nippon Airways',
+    country: 'Japan',
+    region: 'Asia',
+  },
+  {
+    code: 'NK',
+    name: 'Spirit Airlines',
+    country: 'USA',
+    region: 'North America',
+  },
+  {
+    code: 'NT',
+    name: 'Binter Canarias',
+    country: 'Spain',
+    region: 'Europe',
+  },
+  {
+    code: 'NU',
+    name: 'Japan Transocean Air',
+    country: 'Japan',
+    region: 'Asia',
+  },
+  {
+    code: 'NW',
+    name: 'Northwest Airlines',
+    country: 'USA',
+    region: 'North America',
+  },
+  { code: 'NX', name: 'Air Macao', country: 'Macau', region: 'Asia' },
+  {
+    code: 'NZ',
+    name: 'Air New Zealand',
+    country: 'New Zealand',
+    region: 'Oceania',
+  },
+  {
+    code: 'OA',
+    name: 'Olympic Airlines',
+    country: 'Greece',
+    region: 'Europe',
+  },
+  {
+    code: 'OB',
+    name: 'Boliviana de Aviacion',
+    country: 'Bolivia',
+    region: 'Latin America',
+  },
+  {
+    code: 'OK',
+    name: 'Czech Airlines',
+    country: 'Czech Republic',
+    region: 'Europe',
+  },
+  {
+    code: 'OS',
+    name: 'Austrian Airlines',
+    country: 'Austria',
+    region: 'Europe',
+  },
+  {
+    code: 'OU',
+    name: 'Croatia Airlines',
+    country: 'Croatia',
+    region: 'Europe',
+  },
+  {
+    code: 'OZ',
+    name: 'Asiana Airlines',
+    country: 'South Korea',
+    region: 'Asia',
+  },
+  {
+    code: 'P2',
+    name: 'Airkenya Express',
+    country: 'Kenya',
+    region: 'Africa',
+  },
+  {
+    code: 'PD',
+    name: 'Porter Airlines',
+    country: 'Canada',
+    region: 'North America',
+  },
+  {
+    code: 'PG',
+    name: 'Bangkok Airways',
+    country: 'Thailand',
+    region: 'Asia',
+  },
+  {
+    code: 'PK',
+    name: "Pakistan Int'l Airlines",
+    country: 'Pakistan',
+    region: 'Asia',
+  },
+  {
+    code: 'PR',
+    name: 'Philippine Airlines',
+    country: 'Philippines',
+    region: 'Asia',
+  },
+  {
+    code: 'PS',
+    name: 'Ukraine International Airlines',
+    country: 'Ukraine',
+    region: 'Europe',
+  },
+  {
+    code: 'PX',
+    name: 'Air Niugini',
+    country: 'Papua New Guinea',
+    region: 'Oceania',
+  },
+  {
+    code: 'PY',
+    name: 'Surinam Airways',
+    country: 'Suriname',
+    region: 'Latin America',
+  },
+  {
+    code: 'PZ',
+    name: 'TAM Airlines Paraguay',
+    country: 'Paraguay',
+    region: 'Latin America',
+  },
+  { code: 'QF', name: 'Qantas', country: 'Australia', region: 'Oceania' },
+  {
+    code: 'QK',
+    name: 'Air Canada Jazz',
+    country: 'Canada',
+    region: 'North America',
+  },
+  {
+    code: 'QR',
+    name: 'Qatar Airways',
+    country: 'Qatar',
+    region: 'Middle East',
+  },
+  {
+    code: 'QS',
+    name: 'Smart Wings',
+    country: 'Czech Republic',
+    region: 'Europe',
+  },
+  {
+    code: 'QX',
+    name: 'Horizon Air',
+    country: 'USA',
+    region: 'North America',
+  },
+  {
+    code: 'QZ',
+    name: 'Indonesia AirAsia',
+    country: 'Indonesia',
+    region: 'Asia',
+  },
+  {
+    code: 'RA',
+    name: 'Nepal Airlines',
+    country: 'Nepal',
+    region: 'Asia',
+  },
+  {
+    code: 'RB',
+    name: 'Syrian Arab Airlines',
+    country: 'Syria',
+    region: 'Middle East',
+  },
+  {
+    code: 'RC',
+    name: 'Atlantic Airways',
+    country: 'Faroe Islands',
+    region: 'Europe',
+  },
+  { code: 'RE', name: 'Aer Arann', country: 'Ireland', region: 'Europe' },
+  {
+    code: 'RJ',
+    name: 'Royal Jordanian',
+    country: 'Jordan',
+    region: 'Middle East',
+  },
+  { code: 'RO', name: 'Tarom', country: 'Romania', region: 'Europe' },
+  {
+    code: 'S7',
+    name: 'S7 Airlines',
+    country: 'Russia',
+    region: 'Europe',
+  },
+  {
+    code: 'SA',
+    name: 'South African Airways',
+    country: 'South Africa',
+    region: 'Africa',
+  },
+  {
+    code: 'SC',
+    name: 'Shandong Airlines',
+    country: 'China',
+    region: 'Asia',
+  },
+  { code: 'SG', name: 'SpiceJet', country: 'India', region: 'Asia' },
+  {
+    code: 'SJ',
+    name: 'Sriwijaya Air',
+    country: 'Indonesia',
+    region: 'Asia',
+  },
+  {
+    code: 'SK',
+    name: 'Scandinavian Airlines (SAS)',
+    country: 'Sweden',
+    region: 'Europe',
+  },
+  {
+    code: 'SN',
+    name: 'Brussels Airlines',
+    country: 'Belgium',
+    region: 'Europe',
+  },
+  {
+    code: 'SQ',
+    name: 'Singapore Airlines',
+    country: 'Singapore',
+    region: 'Asia',
+  },
+  { code: 'ST', name: 'Germania', country: 'Germany', region: 'Europe' },
+  { code: 'SU', name: 'Aeroflot', country: 'Russia', region: 'Europe' },
+  {
+    code: 'SV',
+    name: 'Saudia',
+    country: 'Saudi Arabia',
+    region: 'Middle East',
+  },
+  {
+    code: 'SW',
+    name: 'Air Namibia',
+    country: 'Namibia',
+    region: 'Africa',
+  },
+  {
+    code: 'SY',
+    name: 'Sun Country Airlines',
+    country: 'USA',
+    region: 'North America',
+  },
+  {
+    code: 'T5',
+    name: 'Turkmenistan Airlines',
+    country: 'Turkmenistan',
+    region: 'Asia',
+  },
+  {
+    code: 'TG',
+    name: 'Thai Airways',
+    country: 'Thailand',
+    region: 'Asia',
+  },
+  {
+    code: 'TK',
+    name: 'Turkish Airlines',
+    country: 'Turkey',
+    region: 'Europe',
+  },
+  {
+    code: 'TN',
+    name: 'Air Tahiti Nui',
+    country: 'French Polynesia',
+    region: 'Oceania',
+  },
+  {
+    code: 'TO',
+    name: 'Transavia France',
+    country: 'France',
+    region: 'Europe',
+  },
+  {
+    code: 'TP',
+    name: 'TAP Portugal',
+    country: 'Portugal',
+    region: 'Europe',
+  },
+  { code: 'TR', name: 'Scoot', country: 'Singapore', region: 'Asia' },
+  {
+    code: 'TS',
+    name: 'Air Transat',
+    country: 'Canada',
+    region: 'North America',
+  },
+  { code: 'TU', name: 'Tunisair', country: 'Tunisia', region: 'Africa' },
+  {
+    code: 'TW',
+    name: "T'way Air",
+    country: 'South Korea',
+    region: 'Asia',
+  },
+  {
+    code: 'TX',
+    name: 'Air Caraibes',
+    country: 'France',
+    region: 'Europe',
+  },
+  { code: 'U2', name: 'easyJet', country: 'UK', region: 'Europe' },
+  {
+    code: 'U6',
+    name: 'Ural Airlines',
+    country: 'Russia',
+    region: 'Europe',
+  },
+  {
+    code: 'UA',
+    name: 'United Airlines',
+    country: 'USA',
+    region: 'North America',
+  },
+  { code: 'UK', name: 'Vistara', country: 'India', region: 'Asia' },
+  {
+    code: 'UL',
+    name: 'SriLankan Airlines',
+    country: 'Sri Lanka',
+    region: 'Asia',
+  },
+  {
+    code: 'UM',
+    name: 'Air Zimbabwe',
+    country: 'Zimbabwe',
+    region: 'Africa',
+  },
+  {
+    code: 'UN',
+    name: 'Transaero Airlines',
+    country: 'Russia',
+    region: 'Europe',
+  },
+  {
+    code: 'UO',
+    name: 'Hong Kong Express',
+    country: 'Hong Kong',
+    region: 'Asia',
+  },
+  {
+    code: 'US',
+    name: 'US Airways',
+    country: 'USA',
+    region: 'North America',
+  },
+  {
+    code: 'UT',
+    name: 'UTair Aviation',
+    country: 'Russia',
+    region: 'Europe',
+  },
+  { code: 'UX', name: 'Air Europa', country: 'Spain', region: 'Europe' },
+  {
+    code: 'V7',
+    name: 'Air Senegal International',
+    country: 'Senegal',
+    region: 'Africa',
+  },
+  {
+    code: 'VA',
+    name: 'Virgin Australia',
+    country: 'Australia',
+    region: 'Oceania',
+  },
+  {
+    code: 'VB',
+    name: 'VivaAerobus',
+    country: 'Mexico',
+    region: 'Latin America',
+  },
+  { code: 'VJ', name: 'VietJet Air', country: 'Vietnam', region: 'Asia' },
+  {
+    code: 'VN',
+    name: 'Vietnam Airlines',
+    country: 'Vietnam',
+    region: 'Asia',
+  },
+  {
+    code: 'VS',
+    name: 'Virgin Atlantic',
+    country: 'United Kingdom',
+    region: 'Europe',
+  },
+  {
+    code: 'VT',
+    name: 'Air Tahiti',
+    country: 'French Polynesia',
+    region: 'Oceania',
+  },
+  {
+    code: 'VW',
+    name: 'Aeromar',
+    country: 'Mexico',
+    region: 'Latin America',
+  },
+  {
+    code: 'VY',
+    name: 'Vueling Airlines',
+    country: 'Spain',
+    region: 'Europe',
+  },
+  { code: 'W6', name: 'Wizz Air', country: 'Hungary', region: 'Europe' },
+  { code: 'WB', name: 'RwandAir', country: 'Rwanda', region: 'Africa' },
+  { code: 'WF', name: 'Wideroe', country: 'Norway', region: 'Europe' },
+  {
+    code: 'WG',
+    name: 'Sunwing Airlines',
+    country: 'Canada',
+    region: 'North America',
+  },
+  {
+    code: 'WK',
+    name: 'Edelweiss Air',
+    country: 'Switzerland',
+    region: 'Europe',
+  },
+  {
+    code: 'WN',
+    name: 'Southwest Airlines',
+    country: 'USA',
+    region: 'North America',
+  },
+  {
+    code: 'WS',
+    name: 'WestJet',
+    country: 'Canada',
+    region: 'North America',
+  },
+  {
+    code: 'WY',
+    name: 'Oman Air',
+    country: 'Oman',
+    region: 'Middle East',
+  },
+  {
+    code: 'XL',
+    name: 'LAN Ecuador',
+    country: 'Ecuador',
+    region: 'Latin America',
+  },
+  { code: 'XQ', name: 'SunExpress', country: 'Turkey', region: 'Europe' },
+  {
+    code: 'Y4',
+    name: 'Volaris',
+    country: 'Mexico',
+    region: 'Latin America',
+  },
+  {
+    code: 'YB',
+    name: 'South African Express',
+    country: 'South Africa',
+    region: 'Africa',
+  },
+  {
+    code: 'YM',
+    name: 'Montenegro Airlines',
+    country: 'Montenegro',
+    region: 'Europe',
+  },
+  { code: 'YW', name: 'Air Nostrum', country: 'Spain', region: 'Europe' },
+  {
+    code: 'ZB',
+    name: 'Monarch Airlines',
+    country: 'United Kingdom',
+    region: 'Europe',
+  },
+  {
+    code: 'ZE',
+    name: 'Eastar Jet',
+    country: 'South Korea',
+    region: 'Asia',
+  },
+  {
+    code: 'ZH',
+    name: 'Shenzhen Airlines',
+    country: 'China',
+    region: 'Asia',
+  },
+  { code: 'ZI', name: 'Aigle Azur', country: 'France', region: 'Europe' },
+  {
+    code: 'ZW',
+    name: 'Air Wisconsin',
+    country: 'USA',
+    region: 'North America',
+  },
+];
+
+let currentVariant = 'dark';
+let currentRegion = 'All';
+let currentSearch = '';
+let darkMode = true;
+
+const REGIONS = [
+  'All',
+  'North America',
+  'Latin America',
+  'Europe',
+  'Middle East',
+  'Africa',
+  'Asia',
+  'Oceania',
+  'Other',
+];
+
+function logoUrl(code, variant) {
+  return `https://www.gstatic.com/flights/airline_logos/70px/${variant === 'dark' ? 'dark/' : ''}${code}.png`;
+}
+
+function buildRegionBar() {
+  const bar = document.getElementById('region-bar');
+  bar.innerHTML = REGIONS.map(
+    (r) =>
+      `<button class="btn ${r === currentRegion ? 'active' : ''}" data-region="${r}">${r}</button>`,
+  ).join('');
+  bar.querySelectorAll('[data-region]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      currentRegion = btn.dataset.region;
+      buildRegionBar();
+      renderGrid();
+    });
+  });
+}
+
+function getFiltered() {
+  return AIRLINES.filter((a) => {
+    const matchRegion = currentRegion === 'All' || a.region === currentRegion;
+    const q = currentSearch.toLowerCase();
+    const matchSearch =
+      !q ||
+      a.code.toLowerCase().includes(q) ||
+      a.name.toLowerCase().includes(q);
+    return matchRegion && matchSearch;
+  });
+}
+
+function renderGrid() {
+  const grid = document.getElementById('grid');
+  const filtered = getFiltered();
+
+  document.getElementById('stats').textContent =
+    `Showing ${filtered.length} of ${AIRLINES.length} carriers`;
+
+  if (!filtered.length) {
+    grid.innerHTML = `<div class="no-results"><span>✈️</span>No airlines found for "${currentSearch}"</div>`;
+    return;
+  }
+
+  grid.innerHTML = filtered
+    .map(
+      (a, i) => `
+    <div class="card" style="animation-delay:${Math.min(i * 20, 400)}ms">
+      <div class="logo-wrap">
+        <img
+          src="${logoUrl(a.code, currentVariant)}"
+          alt="${a.name} logo"
+          loading="lazy"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+        >
+        <span class="placeholder" style="display:none">${a.code}</span>
+      </div>
+      <div class="card-code">${a.code}</div>
+      <div class="card-name">${a.name}</div>
+      ${a.country ? `<div class="card-country">${a.country}</div>` : ''}
+    </div>
+  `,
+    )
+    .join('');
+}
+
+// Toggle page theme + logo variant together
+document.getElementById('toggle-theme').addEventListener('click', function () {
+  darkMode = !darkMode;
+  currentVariant = darkMode ? 'dark' : 'light';
+  document.body.classList.toggle('light-mode', !darkMode);
+  this.textContent = darkMode ? '◐' : '◑';
+  renderGrid();
+});
+
+// Search
+document.getElementById('search').addEventListener('input', function () {
+  currentSearch = this.value;
+  currentRegion = 'All';
+  buildRegionBar();
+  renderGrid();
+});
+
+// Init
+document.getElementById('total-count').textContent = AIRLINES.length;
+buildRegionBar();
+renderGrid();

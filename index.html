@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Airlines</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <div class="title-block">
+        <h1>Google Airlines</h1>
+        <p>
+          IATA 2-LETTER CODES · GOOGLE FLIGHTS ASSETS ·
+          <span id="total-count">—</span> CARRIERS
+        </p>
+      </div>
+      <div class="controls">
+        <div class="search-wrap">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
+          <input
+            type="text"
+            id="search"
+            placeholder="Search airline or code…"
+          />
+        </div>
+        <button
+          class="toggle-theme"
+          id="toggle-theme"
+          title="Toggle light/dark mode"
+        >
+          ◐
+        </button>
+      </div>
+    </header>
+
+    <div class="region-bar" id="region-bar"></div>
+
+    <div class="divider"><hr /></div>
+
+    <div class="stats" id="stats"></div>
+
+    <div class="grid" id="grid"></div>
+
+    <footer>
+      <p>
+        ⚠️ DISCLAIMER — All airline logo images are the property of
+        <strong>Google LLC</strong> and are served directly from Google's
+        infrastructure (<code>gstatic.com/flights</code>).
+      </p>
+      <p>
+        All trademarks, logos, and brand names belong to their respective
+        airline owners. This page is an unofficial reference tool and is not
+        affiliated with, endorsed by, or sponsored by Google LLC or any airline.
+      </p>
+      <p>
+        Data and images © Google LLC · Airline identifiers © IATA (International
+        Air Transport Association)
+      </p>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>
