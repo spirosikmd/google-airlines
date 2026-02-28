@@ -1,3 +1,5 @@
+import { AIRLINES } from './airlines.js';
+
 let currentVariant = 'dark';
 let currentRegion = 'All';
 let currentSearch = '';

@@ -1,4 +1,4 @@
-window.AIRLINES = [
+export const AIRLINES = [
   { code: '0B', name: 'Blue Air', country: 'Romania', region: 'Europe' },
   {
     code: '2B',
