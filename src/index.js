@@ -25,7 +25,10 @@ function buildRegionBar() {
   const bar = document.getElementById('region-bar');
   const q = currentSearch.toLowerCase();
   const searchFiltered = AIRLINES.filter(
-    (a) => !q || a.code.toLowerCase().includes(q) || a.name.toLowerCase().includes(q),
+    (a) =>
+      !q ||
+      a.code.toLowerCase().includes(q) ||
+      a.name.toLowerCase().includes(q),
   );
   const counts = { All: searchFiltered.length };
   searchFiltered.forEach((a) => {
