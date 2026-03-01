@@ -321,13 +321,11 @@ footer {
   font-family: 'DM Mono', monospace;
   font-size: 0.68rem;
   color: var(--muted);
-  line-height: 1.7;
   max-width: 1400px;
   margin: 0 auto;
-}
-
-.footer-attribution {
-  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 footer a {
