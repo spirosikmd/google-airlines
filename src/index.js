@@ -115,6 +115,14 @@ document.getElementById('toggle-theme').addEventListener('click', function () {
 const searchEl = document.getElementById('search');
 const searchClear = document.getElementById('search-clear');
 
+// Press / to focus search
+document.addEventListener('keydown', (e) => {
+  if (e.key === '/' && document.activeElement !== searchEl) {
+    e.preventDefault();
+    searchEl.focus();
+  }
+});
+
 searchEl.addEventListener('input', function () {
   currentSearch = this.value;
   searchClear.style.display = this.value ? 'block' : 'none';
