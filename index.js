@@ -88,7 +88,10 @@ document.getElementById('toggle-theme').addEventListener('click', function () {
   currentVariant = darkMode ? 'dark' : 'light';
   document.body.classList.toggle('light-mode', !darkMode);
   this.textContent = darkMode ? '◐' : '◑';
-  renderGrid();
+  document.querySelectorAll('#grid .logo-wrap img').forEach((img) => {
+    const code = img.closest('.card').querySelector('.card-code').textContent;
+    img.src = logoUrl(code, currentVariant);
+  });
 });
 
 // Search
