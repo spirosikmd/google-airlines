@@ -444,7 +444,6 @@ export const AIRLINES = [
     country: 'Yemen',
     region: 'Middle East',
   },
-  { code: 'IZ', name: 'Arkia', country: 'Israel', region: 'Middle East' },
   {
     code: 'J2',
     name: 'Azerbaijan Airlines',
@@ -581,12 +580,6 @@ export const AIRLINES = [
     region: 'Latin America',
   },
   { code: 'LX', name: 'Swiss', country: 'Switzerland', region: 'Europe' },
-  {
-    code: 'LY',
-    name: 'El Al Israel Airlines',
-    country: 'Israel',
-    region: 'Middle East',
-  },
   {
     code: 'MA',
     name: 'Malev Hungarian Airlines',
