@@ -79,7 +79,7 @@ function renderGrid() {
       <div class="logo-wrap" aria-hidden="true">
         <img
           src="${logoUrl(a.code, currentVariant)}"
-          alt=""
+          alt="${a.name} logo"
           loading="lazy"
           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
         >
@@ -122,7 +122,9 @@ document
 
 // Search
 const searchEl = document.getElementById('search') as HTMLInputElement;
-const searchClear = document.getElementById('search-clear') as HTMLButtonElement;
+const searchClear = document.getElementById(
+  'search-clear',
+) as HTMLButtonElement;
 
 // Press / to focus search
 document.addEventListener('keydown', (e) => {
