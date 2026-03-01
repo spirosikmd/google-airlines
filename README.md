@@ -2,7 +2,16 @@
 
 Google created their own airline logos for [google flights](https://www.google.com/flights) for many airlines out there. Enjoy!
 
-I got the IATA codes from [wikipedia](https://en.wikipedia.org/wiki/List_of_airline_codes). I used the [`data.js`](./data.js) script to read the contents of the wikipedia table and export it to a JSON file. I copy the contents of the JSON file to a TypeScript file so it can be used in the app.
+The IATA codes and airline metadata come from [Wikipedia](https://en.wikipedia.org/wiki/List_of_airline_codes). The airlines data lives in [`src/airlines.js`](./src/airlines.js).
 
 - This is just a fun side project for me.
 - All data and photos are property of Google.
+
+## Running locally
+
+```bash
+yarn install
+yarn start
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
