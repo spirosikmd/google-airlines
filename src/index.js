@@ -1,4 +1,4 @@
-import { AIRLINES } from './airlines.js';
+import { AIRLINES, LAST_UPDATED } from './airlines.js';
 
 let currentVariant = 'dark';
 let currentRegion = 'All';
@@ -118,6 +118,7 @@ searchClear.addEventListener('click', function () {
 
 // Init
 document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('last-updated').textContent = LAST_UPDATED;
 document.getElementById('total-count').textContent = AIRLINES.length;
 buildRegionBar();
 renderGrid();

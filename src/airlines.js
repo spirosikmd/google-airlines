@@ -1,3 +1,5 @@
+export const LAST_UPDATED = 'March 2026';
+
 export const AIRLINES = [
   { code: '0B', name: 'Blue Air', country: 'Romania', region: 'Europe' },
   {
