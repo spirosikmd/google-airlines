@@ -17,12 +17,12 @@ const REGIONS = [
   'Other',
 ];
 
-function logoUrl(code, variant) {
+function logoUrl(code: string, variant: string): string {
   return `https://www.gstatic.com/flights/airline_logos/70px/${variant === 'dark' ? 'dark/' : ''}${code}.png`;
 }
 
 function buildRegionBar() {
-  const bar = document.getElementById('region-bar');
+  const bar = document.getElementById('region-bar')!;
   const q = currentSearch.toLowerCase();
   const searchFiltered = AIRLINES.filter(
     (a) =>
@@ -30,7 +30,7 @@ function buildRegionBar() {
       a.code.toLowerCase().includes(q) ||
       a.name.toLowerCase().includes(q),
   );
-  const counts = { All: searchFiltered.length };
+  const counts: Record<string, number> = { All: searchFiltered.length };
   searchFiltered.forEach((a) => {
     counts[a.region] = (counts[a.region] || 0) + 1;
   });
@@ -38,9 +38,9 @@ function buildRegionBar() {
     (r) =>
       `<button class="btn ${r === currentRegion ? 'active' : ''}" data-region="${r}" aria-pressed="${r === currentRegion}">${r} · ${counts[r] ?? 0}</button>`,
   ).join('');
-  bar.querySelectorAll('[data-region]').forEach((btn) => {
+  bar.querySelectorAll<HTMLButtonElement>('[data-region]').forEach((btn) => {
     btn.addEventListener('click', () => {
-      currentRegion = btn.dataset.region;
+      currentRegion = btn.dataset.region ?? 'All';
       syncUrl();
       buildRegionBar();
       renderGrid();
@@ -61,10 +61,10 @@ function getFiltered() {
 }
 
 function renderGrid() {
-  const grid = document.getElementById('grid');
+  const grid = document.getElementById('grid')!;
   const filtered = getFiltered();
 
-  document.getElementById('stats').textContent =
+  document.getElementById('stats')!.textContent =
     `Showing ${filtered.length} of ${AIRLINES.length} carriers`;
 
   if (!filtered.length) {
@@ -104,20 +104,25 @@ function syncUrl() {
 }
 
 // Toggle page theme + logo variant together
-document.getElementById('toggle-theme').addEventListener('click', function () {
-  darkMode = !darkMode;
-  currentVariant = darkMode ? 'dark' : 'light';
-  document.body.classList.toggle('light-mode', !darkMode);
-  this.textContent = darkMode ? '◐' : '◑';
-  document.querySelectorAll('#grid .logo-wrap img').forEach((img) => {
-    const code = img.closest('.card').querySelector('.card-code').textContent;
-    img.src = logoUrl(code, currentVariant);
+document
+  .getElementById('toggle-theme')!
+  .addEventListener('click', function (this: HTMLButtonElement) {
+    darkMode = !darkMode;
+    currentVariant = darkMode ? 'dark' : 'light';
+    document.body.classList.toggle('light-mode', !darkMode);
+    this.textContent = darkMode ? '◐' : '◑';
+    document
+      .querySelectorAll<HTMLImageElement>('#grid .logo-wrap img')
+      .forEach((img) => {
+        const code =
+          img.closest('.card')?.querySelector('.card-code')?.textContent ?? '';
+        img.src = logoUrl(code, currentVariant);
+      });
   });
-});
 
 // Search
-const searchEl = document.getElementById('search');
-const searchClear = document.getElementById('search-clear');
+const searchEl = document.getElementById('search') as HTMLInputElement;
+const searchClear = document.getElementById('search-clear') as HTMLButtonElement;
 
 // Press / to focus search
 document.addEventListener('keydown', (e) => {
@@ -127,7 +132,7 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-searchEl.addEventListener('input', function () {
+searchEl.addEventListener('input', function (this: HTMLInputElement) {
   currentSearch = this.value;
   searchClear.style.display = this.value ? 'block' : 'none';
   currentRegion = 'All';
@@ -136,7 +141,7 @@ searchEl.addEventListener('input', function () {
   renderGrid();
 });
 
-searchClear.addEventListener('click', function () {
+searchClear.addEventListener('click', function (this: HTMLButtonElement) {
   searchEl.value = '';
   currentSearch = '';
   this.style.display = 'none';
@@ -149,8 +154,8 @@ searchClear.addEventListener('click', function () {
 
 // Init — restore state from URL params
 const params = new URLSearchParams(location.search);
-const qParam = params.get('q') || '';
-const regionParam = params.get('region') || 'All';
+const qParam = params.get('q') ?? '';
+const regionParam = params.get('region') ?? 'All';
 if (qParam) {
   currentSearch = qParam;
   searchEl.value = qParam;
@@ -161,10 +166,11 @@ if (REGIONS.includes(regionParam)) {
 }
 if (!darkMode) {
   document.body.classList.add('light-mode');
-  document.getElementById('toggle-theme').textContent = '◑';
+  (document.getElementById('toggle-theme') as HTMLButtonElement).textContent =
+    '◑';
 }
-document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('last-updated').textContent = LAST_UPDATED;
-document.getElementById('total-count').textContent = AIRLINES.length;
+document.getElementById('year')!.textContent = `${new Date().getFullYear()}`;
+document.getElementById('last-updated')!.textContent = LAST_UPDATED;
+document.getElementById('total-count')!.textContent = `${AIRLINES.length}`;
 buildRegionBar();
 renderGrid();

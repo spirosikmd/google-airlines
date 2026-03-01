@@ -1,6 +1,14 @@
+export interface Airline {
+  code: string;
+  name: string;
+  country?: string;
+  region: string;
+  wiki?: string;
+}
+
 export const LAST_UPDATED = 'March 2026';
 
-export const AIRLINES = [
+export const AIRLINES: Airline[] = [
   {
     code: '0B',
     name: 'Blue Air',
