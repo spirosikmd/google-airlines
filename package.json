@@ -2,13 +2,18 @@
   "name": "google-airlines",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint src"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.2",
     "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1",
     "vite": "^7.3.1"
   }
 }

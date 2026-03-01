@@ -23,6 +23,7 @@ jobs:
           node-version: 20
           cache: yarn
       - run: yarn install --frozen-lockfile
+      - run: yarn lint
       - run: yarn build
       - uses: actions/upload-pages-artifact@v3
         with:
