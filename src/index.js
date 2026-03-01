@@ -1,9 +1,9 @@
 import { AIRLINES, LAST_UPDATED } from './airlines.js';
 
-let currentVariant = 'dark';
+let darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+let currentVariant = darkMode ? 'dark' : 'light';
 let currentRegion = 'All';
 let currentSearch = '';
-let darkMode = true;
 
 const REGIONS = [
   'All',
@@ -154,6 +154,10 @@ if (qParam) {
 }
 if (REGIONS.includes(regionParam)) {
   currentRegion = regionParam;
+}
+if (!darkMode) {
+  document.body.classList.add('light-mode');
+  document.getElementById('toggle-theme').textContent = '◑';
 }
 document.getElementById('year').textContent = new Date().getFullYear();
 document.getElementById('last-updated').textContent = LAST_UPDATED;
