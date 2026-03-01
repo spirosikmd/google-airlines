@@ -85,6 +85,7 @@ function renderGrid() {
       <div class="card-code">${a.code}</div>
       <div class="card-name">${a.name}</div>
       ${a.country ? `<div class="card-country">${a.country}</div>` : ''}
+      ${a.wiki ? `<a class="card-wiki" href="${a.wiki}" target="_blank" rel="noopener noreferrer">Wikipedia ↗</a>` : ''}
     </div>
   `,
     )

@@ -288,6 +288,17 @@ input[type='text']:focus {
   letter-spacing: 0.03em;
 }
 
+.card-wiki {
+  font-size: 0.6rem;
+  font-family: 'DM Mono', monospace;
+  color: var(--dimmed);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+}
+.card-wiki:hover {
+  color: var(--accent);
+}
+
 .no-results {
   grid-column: 1/-1;
   text-align: center;
