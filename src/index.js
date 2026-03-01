@@ -38,6 +38,7 @@ function buildRegionBar() {
   bar.querySelectorAll('[data-region]').forEach((btn) => {
     btn.addEventListener('click', () => {
       currentRegion = btn.dataset.region;
+      syncUrl();
       buildRegionBar();
       renderGrid();
     });
@@ -90,6 +91,14 @@ function renderGrid() {
     .join('');
 }
 
+function syncUrl() {
+  const params = new URLSearchParams();
+  if (currentSearch) params.set('q', currentSearch);
+  if (currentRegion !== 'All') params.set('region', currentRegion);
+  const query = params.toString();
+  history.replaceState(null, '', query ? `?${query}` : location.pathname);
+}
+
 // Toggle page theme + logo variant together
 document.getElementById('toggle-theme').addEventListener('click', function () {
   darkMode = !darkMode;
@@ -110,6 +119,7 @@ searchEl.addEventListener('input', function () {
   currentSearch = this.value;
   searchClear.style.display = this.value ? 'block' : 'none';
   currentRegion = 'All';
+  syncUrl();
   buildRegionBar();
   renderGrid();
 });
@@ -120,11 +130,23 @@ searchClear.addEventListener('click', function () {
   this.style.display = 'none';
   searchEl.focus();
   currentRegion = 'All';
+  syncUrl();
   buildRegionBar();
   renderGrid();
 });
 
-// Init
+// Init — restore state from URL params
+const params = new URLSearchParams(location.search);
+const qParam = params.get('q') || '';
+const regionParam = params.get('region') || 'All';
+if (qParam) {
+  currentSearch = qParam;
+  searchEl.value = qParam;
+  searchClear.style.display = 'block';
+}
+if (REGIONS.includes(regionParam)) {
+  currentRegion = regionParam;
+}
 document.getElementById('year').textContent = new Date().getFullYear();
 document.getElementById('last-updated').textContent = LAST_UPDATED;
 document.getElementById('total-count').textContent = AIRLINES.length;
