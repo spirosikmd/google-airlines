@@ -23,9 +23,17 @@ function logoUrl(code, variant) {
 
 function buildRegionBar() {
   const bar = document.getElementById('region-bar');
+  const q = currentSearch.toLowerCase();
+  const searchFiltered = AIRLINES.filter(
+    (a) => !q || a.code.toLowerCase().includes(q) || a.name.toLowerCase().includes(q),
+  );
+  const counts = { All: searchFiltered.length };
+  searchFiltered.forEach((a) => {
+    counts[a.region] = (counts[a.region] || 0) + 1;
+  });
   bar.innerHTML = REGIONS.map(
     (r) =>
-      `<button class="btn ${r === currentRegion ? 'active' : ''}" data-region="${r}" aria-pressed="${r === currentRegion}">${r}</button>`,
+      `<button class="btn ${r === currentRegion ? 'active' : ''}" data-region="${r}" aria-pressed="${r === currentRegion}">${r} · ${counts[r] ?? 0}</button>`,
   ).join('');
   bar.querySelectorAll('[data-region]').forEach((btn) => {
     btn.addEventListener('click', () => {
